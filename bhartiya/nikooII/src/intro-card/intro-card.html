@@ -1,0 +1,36 @@
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<dom-module id="intro-card">
+	<template>
+	<style is="custom-style" include="iron-flex"></style>
+		<style>
+			:host {
+				display: block;
+				@apply(--layout-vertical);  
+			}
+			paper-card.white {
+              --image-width: 100px;
+              --image-height: 100px;
+      			@apply(--layout-justified);
+            }
+		    .container{
+		    	height: auto;
+		    	margin: 0 auto;
+		    }
+		</style>
+		<div class="container">
+			<paper-card heading="Area Range" image="../src/images/project/area-range.jpg" alt="Area Range" class="white">
+			  <div class="card-content">510 - 1742 sqft</div>
+			</paper-card>
+			<paper-card heading="Area Range" image="../src/images/project/area-range.jpg" alt="Area Range" class="white">
+			  <div class="card-content">510 - 1742 sqft</div>
+			</paper-card>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			is: 'intro-card'
+		});
+	</script>
+</dom-module>

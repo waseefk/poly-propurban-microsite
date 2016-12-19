@@ -1,26 +1,58 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="../my-header/my-header.html">
+<link rel="import" href="../my-floor-plan/floor-plan.html">
+<link rel="import" href="../intro-card/intro-card.html">
+
 
 <dom-module id="my-app">
   <template>
+
+  <style is="custom-style" include="iron-flex iron-flex-alignment"></style>
     <style>
       :host {
         display: block;
       }
+      floor-plan{
+        width: 100%;
+        margin: 0 auto;
+      }
+      #main{
+        padding-top: 700px;
+        margin:20px auto;
+      }
+      .flex-horizontal-with-ratios {
+        @apply(--layout-horizontal);
+      }
+      .flexchild {
+        @apply(--layout-flex);
+      }
+      .flex2child {
+        @apply(--layout-flex-2);
+      }
+      .flex3child {
+        @apply(--layout-flex-3);
+      }
     </style>
-    <h2>Hello [[prop1]]</h2>
+    <div class="container flex-horizontal-with-ratios">
+      <div class="flexchild"></div>
+        <div class="flex3child">
+            <div id="main">
+              <intro-card></intro-card>
+            </div>
+            <div id="unit_details">
+              <floor-plan></floor-plan>
+            </div>
+        </div>
+      <div class="flexchild"></div>
+    </div>
   </template>
 
   <script>
     Polymer({
 
-      is: 'my-app',
-
-      properties: {
-        prop1: {
-          type: String,
-          value: 'my-app',
-        },
-      },
+      is: 'my-app'
 
     });
   </script>
