@@ -1,6 +1,6 @@
-# \<my-app\>
+# \<web-app\>
 
-microsite
+microsite app
 
 ## Install the Polymer-CLI
 

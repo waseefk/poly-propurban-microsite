@@ -1,7 +1,7 @@
 {
-  "name": "my-app",
-  "short_name": "my-app",
-  "description": "microsite",
+  "name": "web-app",
+  "short_name": "web-app",
+  "description": "microsite app",
   "start_url": "/",
   "display": "standalone"
 }

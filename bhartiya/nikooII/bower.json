@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "description": "microsite",
+  "name": "web-app",
+  "description": "microsite app",
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0"
