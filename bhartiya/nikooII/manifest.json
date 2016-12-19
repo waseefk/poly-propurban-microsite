@@ -1,0 +1,7 @@
+{
+  "name": "my-app",
+  "short_name": "my-app",
+  "description": "microsite",
+  "start_url": "/",
+  "display": "standalone"
+}
