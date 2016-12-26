@@ -1,0 +1,23 @@
+<link rel="import" href="prj-intro-card.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<dom-module id="prj-intro">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			paper-card{
+				width: 100%;
+				margin-bottom: 25px;
+			}
+		</style>
+		<paper-card elevation="0">
+			<prj-intro-card></prj-intro-card>
+		</paper-card>
+	</template>
+	<script>
+		Polymer({
+			is: 'prj-intro'
+		});
+	</script>
+</dom-module>

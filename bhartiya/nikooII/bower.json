@@ -8,7 +8,8 @@
     "paper-carousel": "Redbility/paper-carousel#^1.0.9",
     "paper-elements": "PolymerElements/Paper-Elements#^1.0.7",
     "paper-image": "wincinderith/paper-image#^1.1.3",
-    "l2t-paper-slider": "Link2Twenty/l2t-paper-slider#^1.2.3"
+    "l2t-paper-slider": "Link2Twenty/l2t-paper-slider#^1.2.3",
+    "neon-elements": "PolymerElements/Neon-Elements#^1.0.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

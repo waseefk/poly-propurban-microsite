@@ -1,0 +1,185 @@
+<link rel="import" href="../../bower_components/app-layout/app-layout.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+
+  <link rel="import" href="../../bower_components/app-layout/app-scroll-effects/effects/parallax-background.html">
+  <link rel="import" href="../../bower_components/app-layout/app-box/app-box.html">
+<dom-module id="prj-header">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			app-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 650px;
+      color: #000;
+      background-image: url(header.jpg);
+      background-position: bottom center;
+      background-size: cover;
+		  z-index:1001;
+      --app-header-background-front-layer: {
+        background: -webkit-linear-gradient(top, transparent 0%, transparent 50%, rgba(0,0,0,0.5) 100%);
+      };
+
+      --app-header-background-rear-layer: {
+        background-color: #f8f8f8;/*303f9f;*/
+      };
+    }
+
+    paper-icon-button {
+      --paper-icon-button-ink-color: black;
+    }
+
+    app-toolbar.tall {
+      height: 400px;
+    }
+
+
+    [main-title] {
+      font-weight: 300;
+      position: absolute;
+      bottom: 40px;
+      left: 180px;
+      font-size: 45px;
+      margin: 0;
+    }
+
+    [condensed-title] {
+      font-weight: lighter;
+      margin-left: 30px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    [condensed-title] i {
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    @media (max-width: 639px) {
+      [main-title] {
+        left: 85px;
+      }
+    }
+    .contact{
+    	color:red;
+    	font-weight: bold;
+    	margin-right: 25px;
+    }
+    .contact-no{
+    	position: absolute;
+    	margin-top: 0px;
+    	top:15px;
+    	right:0;
+    }
+    .condensed-logo{
+    	width: 120px;
+    	margin-top: 5px;
+      float: left;
+    }
+    /*a {
+        text-decoration: none;
+        font-size: inherit;
+        color: inherit;
+      }
+    .toolbar {
+        @apply(--layout-horizontal);
+        @apply(--layout-end-justified);
+        background-color: rgba(255, 255, 255, 0.95);
+
+      }
+      .tabs {
+        height: 100%;
+        @apply(--layout-horizontal);
+        float: right;
+        margin-right: 300px;
+      }
+      .tabs > a {
+        @apply(--layout-vertical);
+        @apply(--layout-center-center);
+        margin: 12px 25px 12px;
+        border-bottom: 1px solid #222;
+        z-index: 10002; 
+      }*/
+
+
+    .nav {
+      height: 64px;
+      position: fixed;
+      top:0;
+      right:14%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0);
+    }
+
+    .nav li {
+      display: inline-block;
+      list-style: none;
+    }
+
+    .nav a {
+      display: inline-block;
+      font-weight: 12px;
+      line-height: 64px;
+      text-decoration: none;
+      color: black;
+      font-weight: 200;
+      margin: 0 10px;
+    }
+
+    .nav a:hover {
+      color: #444;
+      border-bottom: 1px solid #999;
+    }
+
+    [threshold-triggered] {
+      position: fixed;
+      top: 50px;
+      left: 100px;
+      right: 100px;
+      z-index: 1;
+    }
+
+</style>
+		<app-header condenses fixed effects="waterfall resize-title fade-background">
+		    <app-toolbar>
+		      <div condensed-title>
+		      <img src="nikoo-logo.png" class="condensed-logo">
+
+		      <div class="contact-no">
+		      	<paper-icon-button src="call.png" width="24px"></paper-icon-button><span class="contact">8892140077</span>
+		      </div>
+		      </div>
+            <app-box scroll-target="scrollingRegion" threshold="64">
+              <ul role="navigation" class="nav">
+                <li><a href="#main">Home</a></li>
+                <li><a href="#description">About Project</a></li>
+                <li><a href="#plan">Floor Plan</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#m-plan">Site Plan</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#builder">About us</a></li>
+              </ul>
+            </app-box>
+		    </app-toolbar>
+		    <h1 main-title><img src="nikoo-logo.png"></h1>
+	  </app-header>
+	</template>
+	<script>
+		Polymer({
+			is: 'prj-header',
+      goLink: function(e) {
+        window.location.href = e.target.getAttribute('link');
+      }
+		});
+	</script>
+</dom-module>

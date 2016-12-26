@@ -1,0 +1,20 @@
+<link rel="import" href="prj-location-map-detail.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<dom-module id="prj-location-map">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+		</style>
+		<paper-card heading="Location Map" elevation="2">
+			<prj-location-map-detail></prj-location-map-detail>
+		</paper-card>
+	</template>
+	<script>
+		Polymer({
+			is: 'prj-location-map'
+		});
+	</script>
+</dom-module>

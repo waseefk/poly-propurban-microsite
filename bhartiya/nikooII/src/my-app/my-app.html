@@ -1,10 +1,16 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 
-<link rel="import" href="../my-header/my-header.html">
-<link rel="import" href="../my-floor-plan/floor-plan.html">
-<link rel="import" href="../intro-card/intro-card.html">
-
+<link rel="import" href="../prj-floor-plan/prj-floor-plan.html">
+<link rel="import" href="../prj-intro/prj-intro.html">
+<link rel="import" href="../prj-description/prj-description.html">
+<link rel="import" href="../prj-config/prj-config.html">
+<link rel="import" href="../prj-ameneties/prj-ameneties.html">
+<link rel="import" href="../prj-specification/prj-specification.html">
+<link rel="import" href="../prj-gallery/prj-gallery.html">
+<link rel="import" href="../prj-master-plan/prj-master-plan.html">
+<link rel="import" href="../prj-location-map/prj-location-map.html">
+<link rel="import" href="../prj-about-builder/prj-about-builder.html">
 
 <dom-module id="my-app">
   <template>
@@ -14,13 +20,16 @@
       :host {
         display: block;
       }
-      floor-plan{
+      prj-floor-plan{
         width: 100%;
         margin: 0 auto;
       }
       #main{
         padding-top: 700px;
         margin:20px auto;
+      }
+      prj-intro-card,prj-description,prj-config,prj-floor-plan,prj-ameneties,prj-specification,prj-gallery,prj-master-plan,prj-location-map,prj-about-builder{
+        margin-bottom: 20px;
       }
       .flex-horizontal-with-ratios {
         @apply(--layout-horizontal);
@@ -39,10 +48,16 @@
       <div class="flexchild"></div>
         <div class="flex3child">
             <div id="main">
-              <intro-card></intro-card>
-            </div>
-            <div id="unit_details">
-              <floor-plan></floor-plan>
+              <prj-intro id="intro"></prj-intro>
+              <prj-description id="description"></prj-description>
+              <prj-config id="config"></prj-config>
+              <prj-floor-plan id="plan"></prj-floor-plan>
+              <prj-ameneties id="ameneties"></prj-ameneties>
+              <prj-specification id="specs"></prj-specification>
+              <prj-gallery id="gallery"></prj-gallery>
+              <prj-master-plan id="m-plan"></prj-master-plan>
+              <prj-location-map id="map"></prj-location-map>
+              <prj-about-builder id="builder"></prj-about-builder>
             </div>
         </div>
       <div class="flexchild"></div>
