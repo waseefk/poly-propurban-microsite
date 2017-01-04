@@ -1,0 +1,57 @@
+<html><head><link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+</head><body><dom-module id="prj-config-unit">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			paper-card{
+			    width: 195px;
+			  }
+			  iron-icon{
+			  	float:left;
+			  }
+			  .unit{
+				margin:5px;
+				padding-left:30px;
+			  }
+			  paper-card::shadow.header.paper-card .title-text.paper-card{
+			  	font-size:20px;
+			  }
+		</style>
+		<div class="horizontal">
+			<paper-card heading="Project Area" elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/project_area.svg"></iron-icon>
+			  	<div class="unit">125 Acres</div>
+			  </div>
+			</paper-card>
+			<paper-card heading="Total Blocks" elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/tower.svg"></iron-icon>
+			  	<div class="unit">19 Blocks</div>
+			  </div>
+			</paper-card>
+			<paper-card heading="Total Floors" elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/floors.svg"></iron-icon>
+			  	<div class="unit">33 Floors each</div>
+			  </div>
+			</paper-card>
+			<paper-card heading="Total Units" elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/units.svg"></iron-icon>
+			  	<div class="unit">4516 units</div>
+			  </div>
+			</paper-card>
+			<paper-card heading="Open Space" elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/open_space.svg"></iron-icon>
+			  	<div class="unit">75% Space</div>
+			  </div>
+			</paper-card>
+		</div>
+	</template>
+	<script>Polymer({is:"prj-config-unit"});</script>
+</dom-module></body></html>

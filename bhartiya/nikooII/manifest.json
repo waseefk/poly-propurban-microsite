@@ -1,7 +1,7 @@
 {
-  "name": "web-app",
+  "name": "propurban",
   "short_name": "web-app",
-  "description": "microsite app",
+  "description": "Nikoo Homes residential property project has 4516 units to sell luxury flats 1/1.5/2/2.5/3/4 BHK available for sale in Bangalore. Enquire now!",
   "start_url": "/",
   "display": "standalone"
 }

@@ -1,0 +1,25 @@
+<html><head><link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="prj-contact-form.html">
+</head><body><dom-module id="prj-contact">
+	<template>
+		<style>
+			:host {
+				display: block;
+				margin:0 auto;
+			}
+			paper-card{
+				width: 100%;
+			}
+			prj-contact-form{
+				padding:15px;
+			}
+		</style>
+		<paper-card heading="Contact Us" elevation="2">
+			<prj-contact-form></prj-contact-form>
+		</paper-card>
+	</template>
+	<script>Polymer({is:"prj-contact"});</script>
+</dom-module></body></html>

@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/iron-media-query/iron-media-query.html">
 
 <link rel="import" href="../prj-floor-plan/prj-floor-plan.html">
 <link rel="import" href="../prj-intro/prj-intro.html">
@@ -11,6 +12,9 @@
 <link rel="import" href="../prj-master-plan/prj-master-plan.html">
 <link rel="import" href="../prj-location-map/prj-location-map.html">
 <link rel="import" href="../prj-about-builder/prj-about-builder.html">
+<link rel="import" href="../prj-price/prj-price.html">
+<link rel="import" href="../prj-contact/prj-contact.html">
+
 
 <dom-module id="my-app">
   <template>
@@ -23,12 +27,12 @@
       prj-floor-plan{
         width: 100%;
         margin: 0 auto;
-      }
+      } 
       #main{
         padding-top: 700px;
         margin:20px auto;
       }
-      prj-intro-card,prj-description,prj-config,prj-floor-plan,prj-ameneties,prj-specification,prj-gallery,prj-master-plan,prj-location-map,prj-about-builder{
+      prj-intro-card,prj-description,prj-config,prj-floor-plan,prj-ameneties,prj-specification,prj-gallery,prj-master-plan,prj-location-map,prj-price,prj-about-builder,prj-contact{
         margin-bottom: 20px;
       }
       .flex-horizontal-with-ratios {
@@ -43,7 +47,11 @@
       .flex3child {
         @apply(--layout-flex-3);
       }
+
     </style>
+<template is="dom-bind">
+  <iron-media-query query="(min-width:500px)" query-matches="{{isBetween500_700px}}"></iron-media-query>
+  <template is="dom-if" if="{{isBetween500_700px}}">
     <div class="container flex-horizontal-with-ratios">
       <div class="flexchild"></div>
         <div class="flex3child">
@@ -57,11 +65,32 @@
               <prj-gallery id="gallery"></prj-gallery>
               <prj-master-plan id="m-plan"></prj-master-plan>
               <prj-location-map id="map"></prj-location-map>
+              <prj-price id="price"></prj-price>
               <prj-about-builder id="builder"></prj-about-builder>
+              <prj-contact id="contact"></prj-contact>
             </div>
         </div>
       <div class="flexchild"></div>
     </div>
+    </template>
+      <template is="dom-if" if="{{!isBetween500_700px}}">
+        <div id="main">
+              <prj-intro id="intro"></prj-intro>
+              <prj-description id="description"></prj-description>
+              <prj-config id="config"></prj-config>
+              <prj-floor-plan id="plan"></prj-floor-plan>
+              <prj-ameneties id="ameneties"></prj-ameneties>
+              <prj-specification id="specs"></prj-specification>
+              <prj-gallery id="gallery"></prj-gallery>
+              <prj-master-plan id="m-plan"></prj-master-plan>
+              <prj-location-map id="map"></prj-location-map>
+              <prj-price id="price"></prj-price>
+              <prj-about-builder id="builder"></prj-about-builder>
+              <prj-contact id="contact"></prj-contact>
+            </div>
+        </div>
+      </template>
+    </template>
   </template>
 
   <script>

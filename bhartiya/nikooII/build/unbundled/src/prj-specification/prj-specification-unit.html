@@ -1,0 +1,70 @@
+<html><head><link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+</head><body><dom-module id="prj-specification-unit">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			paper-card{
+			    width: 195px;
+			    vertical-align: top;
+			  }
+			  iron-icon{
+			  	float:left;
+			  }
+			  .unit{
+				margin:5px;
+				padding-left:30px;
+				font-weight: 600;
+			  }
+			  li{
+			  	padding:5px 0;
+			  	margin:0;
+			  }
+			  ul{
+			  	margin:0;
+			  	padding:0;
+			  }
+		</style>
+		<div class="horizontal">
+			<paper-card elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/fittings.svg"></iron-icon>
+			  	<div class="unit">Fittings</div>
+			  	<div class="card-actions">
+			  	<ul><li>Kitchen Granite Platform With Stainless Steel Sink</li><li>Toilet EWCS</li><li>Chrome Plated Fittings</li></ul></div>
+			  </div>
+			</paper-card>
+			<paper-card elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/window.svg"></iron-icon>
+			  	<div class="unit">Windows</div>
+			  	<div class="card-actions"><ul><li>Sliding Aluminium Windows</li></ul></div>
+			  </div>
+			</paper-card>
+			<paper-card elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/doors.svg"></iron-icon>
+			  	<div class="unit">Doors</div>
+			  	<div class="card-actions"><ul><li>Internal - Laminated Flush Door</li><li>Main - Laminated Flush Door</li></ul></div>
+			  </div>
+			</paper-card>
+			<paper-card elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/wall.svg"></iron-icon>
+			  	<div class="unit">Walls</div>
+			  	<div class="card-actions"><ul><li>Kitchen - Ceramic Tiles</li><li>Toilets - Ceramic Tiles</li><li>Interior - Plastic Emulsion Paint</li><li>Exterior - Texture Paint</li></ul></div>
+			  </div>
+			</paper-card>
+			<paper-card elevation="0" animated-shadow="true">
+			  <div class="card-content">
+			  	<iron-icon src="../images/icons/flooring.svg"></iron-icon>
+			  	<div class="unit">Flooring</div>
+			  	<div class="card-actions"><ul><li>Balcony - Vitrified Tiles</li><li>Kitchen - Ceramic Tiles</li><li>Other Bedroom - Ceramic Tiles</li><li>Living &amp; Dining - Vitrified Tiles</li></ul></div>
+			  </div>
+			</paper-card>
+		</div>
+	</template>
+	<script>Polymer({is:"prj-specification-unit"});</script>
+</dom-module></body></html>

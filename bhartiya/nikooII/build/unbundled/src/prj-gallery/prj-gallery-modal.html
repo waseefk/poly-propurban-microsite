@@ -1,0 +1,86 @@
+<html><head><link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/fade-out-animation.html">
+<link rel="import" href="../../bower_components/l2t-paper-slider/l2t-paper-slider.html">
+  <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+  <link rel="import" href="../../bower_components/iron-icons/hardware-icons.html">
+</head><body><dom-module id="prj-gallery-modal">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			.container{
+	      		padding: 25px;
+			}
+			img{
+				width: 200px;
+				margin:20px;
+				cursor: pointer;
+			}
+		paper-dialog.size-position {
+          position: fixed;
+          top: 8vh;
+          left:15%;
+          right:9%;
+          width: 60vw;
+          height: 550px;
+          overflow: hidden;
+        }
+        paper-slide{
+        	background-size: contain;
+        	background-repeat: no-repeat;
+        	margin:0;
+        	padding:0;
+        	height: 400px;
+				width:100%;
+        }
+			  .proceed{
+			  	position: absolute;
+			  	top:50%;
+			  	left:0;
+				cursor: pointer;
+				z-index: 100;
+
+			  }
+			  .proceed-r{
+			  	position: absolute;
+			  	top:50%;
+			  	right:0;
+				cursor: pointer;
+				z-index: 100;
+			  }
+		</style>
+		<img onclick="dialog.open()" src="../images/gallery/1.jpg" alt="nikoo bedroom" preload="" sizing="cover">
+
+		<img onclick="dialog.open()" src="../images/gallery/2.jpg" alt="nikoo luxury bedroom" preload="" sizing="cover">
+
+		<img onclick="dialog.open()" src="../images/gallery/3.jpg" alt="nikoo modern kitchen" preload="" sizing="cover">
+
+		<img onclick="dialog.open()" src="../images/gallery/4.jpg" alt="nikoo floor room" preload="" sizing="cover">
+
+		<img onclick="dialog.open()" src="../images/gallery/5.jpg" alt="nikoo dining hall" preload="" sizing="cover">
+
+		<img onclick="dialog.open()" src="../images/gallery/6.jpg" alt="nikoo open hall" preload="" sizing="cover">
+
+		<paper-dialog id="dialog" entry-animation="scale-up-animation" exit-animation="fade-out-animation" class="size-position" modal="">
+			<iron-icon icon="clear" title="more info" dialog-confirm="" autofocus="" style="float:right; margin:5px 0; cursor:pointer">
+		    </iron-icon>
+		    <div class="container">
+		    <paper-icon-button icon="hardware:keyboard-arrow-left" raised="" class="proceed" onclick="document.querySelector('.moveControl1').movePrev();"></paper-icon-button>
+		  <l2t-paper-slider hide-nav="" class="moveControl1" auto-progress="" slide-duration="3" total-slides="6">
+		    <paper-slide style="background-image: url('../images/gallery/1.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/gallery/2.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/gallery/3.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/gallery/4.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/gallery/5.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/gallery/6.jpg')"></paper-slide>
+		  </l2t-paper-slider>
+	  			<paper-icon-button icon="hardware:keyboard-arrow-right" raised="" class="proceed-r" onclick="document.querySelector('.moveControl1').moveNext();"></paper-icon-button>
+	  		</div>
+		</paper-dialog>
+	</template>
+	<script>Polymer({is:"prj-gallery-modal"});</script>
+</dom-module></body></html>

@@ -1,20 +1,119 @@
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/gold-phone-input/gold-phone-input.html">
+<link rel="import" href="../../bower_components/gold-email-input/gold-email-input.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <dom-module id="prj-contact-form">
 	<template>
 		<style>
 			:host {
 				display: block;
 			}
+			#form {
+			    width: 50%;
+			    height: auto;
+			    margin:0 auto;
+			  }
+			paper-button.indigo {
+			    background-color: var(--paper-indigo-500);
+			    color: white;
+			    --paper-button-raised-keyboard-focus: {
+			      background-color: var(--paper-pink-a200) !important;
+			      color: white !important;
+			    };
+			  }
+			  paper-button.indigo:hover {
+			    background-color: var(--paper-indigo-400);
+			  }
+			  #form>div{
+			  	width: 100px;
+			  	margin:0 auto;
+			  }
+			  paper-button{
+			  	margin-top:15px;
+			  	width: 100%;
+			  }
+			  #thankMessage{
+				text-align: center;
+			  }
 		</style>
-
+		<iron-ajax
+		  id="ajax"
+		  url="https://mandrillapp.com/api/1.0/messages/send.json" 
+		  method="POST"
+		  handle-as="JSON"
+		  on-response="formSubmited"
+		  >
+		</iron-ajax>
+		<form is="iron-form" id="form" method="POST" action="" hidden="{{hide}}">
+			<paper-input id="name" label="Name" auto-validate required pattern="^[a-zA-Z\s]*$" error-message="Please type your name!" maxlength="15" value="{{name::input}}"></paper-input>
+		<gold-phone-input id="mobile" label="Mobile"
+    country-code="91"
+    phone-number-pattern="XXXXXXXXXX" auto-validate required maxlength="10" error-message="Please enter your valid mobile number!" value="{{mobile::input}}">
+	</gold-phone-input>
+	<gold-email-input id="email" label="Email" auto-validate required error-message="Please enter your valid Email address!" value="{{email::input}}"></gold-email-input>
+		<paper-textarea id="message" label="Message" value="{{message::input}}" required error-message="Please say something to us!"></paper-textarea>
+		<div class="form-button" value="{{message::input}}">
+			<paper-button raised class="indigo" id="submit" on-click="submitForm">Submit</paper-button>
+		</div>
+		</form>
+		<div id="thankMessage" hidden="{{show}}"><h2>Thank you for contacting us, we will get back to you soon with your request</h2></div>
 	</template>
 	<script>
 		Polymer({
-			is: 'prj-contact-form'
+			is: 'prj-contact-form',
+			properties:{
+				name:{
+					type: String,
+					notify: true,
+					value: null
+				},
+				mobile:{
+					type: String,
+					notify: true,
+					value: null
+				},
+				email:{
+					type: String,
+					notify: true,
+					value: null
+				},
+				message:{
+					type: String,
+					notify: true,
+					value: null
+				},
+				hide: {
+                    type: Boolean,
+                    value: false
+                },
+                show:{
+                	type: Boolean,
+                	value: true
+                }
+	        },
+		submitForm: function(){
+			if(this.name != null && this.mobile !=null && this.email != null && this.message != null)
+				{
+					this.$.ajax.params= {"key": "VHIvsqduxEypeifPvSD2qQ", "message[from_email]": "accounts@propurban.com", "message[from_name]": this.name, "message[headers][Reply-To]":"accounts@propurban.com", "message[subject]": this.name +": "+"Enquiry mail", "message[text]": "Name: "+ this.name + "\r\n\r\nMobile: "+ this.mobile+ "\r\n\r\nEmail: "+this.email+"\r\n\r\nMessage: "+this.message, "message[to][0][email]":"accounts@propurban.com", "message[to][0][name]": "Waseef Khan", "message[to][0][type]":"to"};
+					this.$.ajax.generateRequest();
+					this.name = null;
+					this.mobile =null;
+					this.email = null;
+					this.message = null;
+					this.$.name.invalid = false;
+					this.$.mobile.invalid = false;
+					this.$.email.invalid = false;
+					this.$.message.invalid = false;
+					this.hide = true;
+					this.show = false;
+				}
+			}	,
+			formSubmited: function (data) {
+				var logData = data.detail.response;
+            console.log(logData.staus);
+        	}
 		});
 	</script>
-	<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script> 
 </dom-module>

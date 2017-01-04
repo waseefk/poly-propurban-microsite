@@ -1,6 +1,6 @@
 {
-  "name": "web-app",
-  "description": "microsite app",
+  "name": "propurban",
+  "description": "Nikoo Homes residential property project has 4516 units to sell luxury flats 1/1.5/2/2.5/3/4 BHK available for sale in Bangalore. Enquire now!",
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
@@ -9,7 +9,11 @@
     "paper-elements": "PolymerElements/Paper-Elements#^1.0.7",
     "paper-image": "wincinderith/paper-image#^1.1.3",
     "l2t-paper-slider": "Link2Twenty/l2t-paper-slider#^1.2.3",
-    "neon-elements": "PolymerElements/Neon-Elements#^1.0.0"
+    "neon-elements": "PolymerElements/Neon-Elements#^1.0.0",
+    "gold-elements": "PolymerElements/Gold-Elements#^1.0.1",
+    "iron-form": "PolymerElements/iron-form#^1.1.4",
+    "paper-datatable-api": "RoXuS/paper-datatable-api#^0.1.20",
+    "iron-data-table": "Saulis/iron-data-table#^1.0.6"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

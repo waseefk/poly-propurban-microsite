@@ -1,13 +1,22 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <meta charset="utf-8">    
+    <title>Bhartiya City Nikoo Homes Phase 2 | Flats, Apartments for Sale in Thanisandra Main Road, Bangalore.</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <script src="/src/data/schema.json" type="application/ld+json"></script>
+    <meta name="description" content="Nikoo Homes residential property project has 4516 units to sell luxury flats 1/1.5/2/2.5/3/4 BHK available for sale in Bangalore. Enquire now! on bhartiyacitynikoohomes2.propurban.com"/>
 
-    <title>Nikoo Homes II</title>
+<link rel="canonical" href="https://bhartiyacitynikoohomes2.propurban.com" />
+<link rel="amphtml" href="https://bhartiyacitynikoohomes2.propurban.com/amp" />
+
+
+    <meta name="author" content="bhartiyacitynikoohomes2.propurban.com" />
+<meta name="google-site-verification" content="xbYP79r_q6bC7bELWGtqyV_vnqm7k4FOxgNt42kD_0A" />
+
+    <link rel="shortcut icon" type="image/png" href="/src/images/favicon.png"/>
     <meta name="description" content="web-app description">
 
-    <!-- See https://goo.gl/OOhYW5 -->
     <link rel="manifest" href="/manifest.json">
     <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 <!-- 
@@ -23,90 +32,23 @@
     }
     </style>
   </head>
-  <body>
+  <body class="fullbleed">
     <prj-header></prj-header>
     <my-app></my-app>
     <!-- <sample-content size="100"></sample-content> -->
+    <script src="/src/js/script.js"></script>
+
     <script>
-      (function(document, history, location) {
-  var HISTORY_SUPPORT = !!(history && history.pushState);
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  var anchorScrolls = {
-    ANCHOR_REGEX: /^#[^ ]+$/,
-    OFFSET_HEIGHT_PX: 75,
+  ga('create', 'UA-89736721-1', 'auto');
+  ga('send', 'pageview');
 
-    /**
-     * Establish events, and fix initial scroll position if a hash is provided.
-     */
-    init: function() {
-      this.scrollToCurrent();
-      window.addEventListener('hashchange', this.scrollToCurrent.bind(this));
-      document.body.addEventListener('click', this.delegateAnchors.bind(this));
-    },
+</script>
 
-    /**
-     * Return the offset amount to deduct from the normal scroll position.
-     * Modify as appropriate to allow for dynamic calculations
-     */
-    getFixedOffset: function() {
-      return this.OFFSET_HEIGHT_PX;
-    },
 
-    /**
-     * If the provided href is an anchor which resolves to an element on the
-     * page, scroll to it.
-     * @param  {String} href
-     * @return {Boolean} - Was the href an anchor.
-     */
-    scrollIfAnchor: function(href, pushToHistory) {
-      var match, rect, anchorOffset;
-
-      if(!this.ANCHOR_REGEX.test(href)) {
-        return false;
-      }
-
-      match = document.getElementById(href.slice(1));
-
-      if(match) {
-        rect = match.getBoundingClientRect();
-        anchorOffset = window.pageYOffset + rect.top - this.getFixedOffset();
-        window.scrollTo(window.pageXOffset, anchorOffset);
-
-        // Add the state to history as-per normal anchor links
-        if(HISTORY_SUPPORT && pushToHistory) {
-          history.pushState({}, document.title, location.pathname + href);
-        }
-      }
-
-      return !!match;
-    },
-
-    /**
-     * Attempt to scroll to the current location's hash.
-     */
-    scrollToCurrent: function() {
-      this.scrollIfAnchor(window.location.hash);
-    },
-
-    /**
-     * If the click event's target was an anchor, fix the scroll position.
-     */
-    delegateAnchors: function(e) {
-      var elem = e.target;
-
-      if(
-        elem.nodeName === 'A' &&
-        this.scrollIfAnchor(elem.getAttribute('href'), true)
-      ) {
-        e.preventDefault();
-      }
-    }
-  };
-
-  window.addEventListener(
-    'DOMContentLoaded', anchorScrolls.init.bind(anchorScrolls)
-  );
-})(window.document, window.history, window.location);
-    </script>
   </body>
 </html>

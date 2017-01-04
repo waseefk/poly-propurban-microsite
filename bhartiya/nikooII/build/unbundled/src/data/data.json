@@ -1,0 +1,22 @@
+{
+	"@context": "http://json-ld.org/contexts/data.jsonld",
+	"@id": "http://bhartiyacity.nikoohomes2.propurban.com",
+	"@type": "http://bhartiyacity.nikoohomes2.propurban.com/projects",
+	"builderName": "Bhartiya City",
+	"builderPage": "http://bhartiyacity.propurban.com",
+	"projectName": "Nikoo Homes - II"
+
+
+}
+
+{
+	"@context": "data.json",
+	"@id": "propurban.com",
+	"@type": "projects",
+	"builderName": "Bhartiya City",
+	"builderPage": "http://bhartiyacity.propurban.com",
+	"projectName": "Nikoo Homes - II",
+	"projectPage": "http:bhartiyacity.nikoohomes2.propurban.com"
+
+
+}

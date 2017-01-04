@@ -1,0 +1,29 @@
+<html><head><link rel="import" href="../../bower_components/paper-card/paper-card.html">
+ <link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
+  <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../../bower_components/iron-icons/hardware-icons.html">
+
+</head><body><dom-module id="prj-description">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			paper-card{
+		    width: 100%;
+		  }
+		  paper-icon-button {
+		      color: var(--paper-grey-600);
+		    }
+		</style>
+		<div class="horizontal">
+		  <paper-card heading="Project Description" class="black" elevation="2">
+		  	<div class="card-content">Bhartiya City is an integrated city sprawling over 125 acres area near Hebbal in Bangalore. It comprises Residential, Commercial, IT-SEZ, Hotels, Retail Districts, International School and a multi-specialty Hospital. It is one of the largest developments of its kind within city limits in India.</div>
+		  			
+			      <div class="card-actions" style="padding: 15px">Nikoo Homes-II takes best of the village life and adapts it to modern times by introducing the idea of a vertical village living. Feel the Promenade which runs along forest-like vegetation by its side. A Sky Park with a Jogging Track on the 33rd floor, a Sunrise Point, Shops, Cafes, uniquely-designed Club Houses, Gardens on most floors, plenty of Community Spaces, and even a Private Cinema for screening, and much more. Amongst others, there is a Learning Centre open for all age groups. Can’t step out? Download project app and order all essential services from laundry to groceries, with a few touches and swipes. With one or two Bay Windows (many being in the corner) in almost every home, large decks and modular kitchens, Nikoo Homes II represents a great design.
+			      			    </div>
+		  </paper-card>
+		</div>
+	</template>
+	<script>function _toggle(){var e=document.getElementById("more-info"),o=Polymer.dom(event).localTarget;o.icon=e.opened?"hardware:keyboard-arrow-down":"hardware:keyboard-arrow-up",e.toggle()}Polymer({is:"prj-description"});</script>
+</dom-module></body></html>

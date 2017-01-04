@@ -1,0 +1,36 @@
+<html><head><link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-data-table/iron-data-table.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+</head><body><dom-module id="prj-price">
+	<template is="dom-bind">
+		<style>
+			:host {
+				display: block;
+			}
+			paper-card{
+		    	width: 100%;
+		  }
+		</style>
+		<iron-ajax auto="" url="price-list.json" content-type="application/json" handle-as="json" last-response="{{ajaxResponse}}"></iron-ajax>	
+ 	<paper-card heading="Price List" elevation="2">
+		 		
+
+
+					<iron-data-table items="[[ajaxResponse.data]]">
+						<data-table-column name="Unit Type">
+							<template>[[item.unitType]]</template>
+						</data-table-column>
+						<data-table-column name="Size in sq.ft.">
+							<template>[[item.size]]</template>
+						</data-table-column>
+						<data-table-column name="Price per sq. ft.">
+							<template>[[item.price]]</template>
+						</data-table-column>
+						<data-table-column name="Cost">
+							<template>[[item.cost]]</template>
+						</data-table-column>
+					</iron-data-table>
+		 		</paper-card>
+	</template>
+	<script>Polymer({is:"prj-price"});</script>
+</dom-module></body></html>

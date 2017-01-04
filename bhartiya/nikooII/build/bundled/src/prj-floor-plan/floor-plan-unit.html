@@ -1,0 +1,72 @@
+<html><head><link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../../bower_components/iron-icons/hardware-icons.html">
+<link rel="import" href="../../bower_components/l2t-paper-slider/l2t-paper-slider.html">
+
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+
+
+</head><body><dom-module id="floor-plan-unit">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			.container{
+				width:70vw;
+	      		padding: 25px;
+			}
+			h2{
+				font-size: 25px;
+				text-transform: uppercase; 
+				margin:0;
+			}
+			l2t-paper-slider paper-slide{
+				background-size: 70vw;
+			}
+			paper-slide{
+				background-repeat: no-repeat;
+			}
+			.moveControl {
+				margin-top: 10px;
+			    --paper-slide-dot: rgba(120,144,156 ,.8);
+			    --paper-slide-dot-selected: rgba(38,50,56 ,1);
+			  }
+			  .proceed{
+			  	position: absolute;
+			  	top:50%;
+			  	left:0;
+				cursor: pointer;
+				z-index: 1;
+
+			  }
+			  .proceed-r{
+			  	position: absolute;
+			  	top:50%;
+			  	right:0;
+				cursor: pointer;
+				z-index: 1;
+			  }
+		</style>
+		<div class="container">
+			  	<paper-icon-button icon="hardware:keyboard-arrow-left" raised="" class="proceed" onclick="document.querySelector('.moveControl').movePrev();"></paper-icon-button>
+		  <l2t-paper-slider class="moveControl" auto-progress="" slide-duration="3" total-slides="10">
+		    <paper-slide style="background-image: url('../images/a3-studio.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/b6-1-bhk.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/c4-1-bhk-study.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/d21-4-5-series.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/d22-2-bhk.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/d30-2-bhk.jpg')"></paper-slide>
+
+		    <paper-slide style="background-image: url('../images/f14-2-bhk-study.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/g17-3-bhk.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/g18-3-bhk.jpg')"></paper-slide>
+		    <paper-slide style="background-image: url('../images/d21-2-bhk.jpg')"></paper-slide>
+		  </l2t-paper-slider>
+	  			<paper-icon-button icon="hardware:keyboard-arrow-right" raised="" class="proceed-r" onclick="document.querySelector('.moveControl').moveNext();"></paper-icon-button>
+  			</div>
+		
+	</template>
+	<script>Polymer({is:"floor-plan-unit"});</script>
+</dom-module>
+</body></html>

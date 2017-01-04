@@ -1,14 +1,35 @@
-<link rel="import" href="../../bower_components/iron-form/iron-form.html">
-<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
 
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="prj-contact-form.html">
 <dom-module id="prj-contact">
 	<template>
 		<style>
 			:host {
 				display: block;
+				margin:0 auto;
 			}
-		</style>
-		
+			paper-card{
+				width: 100%;
+			}
+			prj-contact-form{
+				padding:15px;
+			}
+		</style><!-- 
+		<paper-dialog id="contact" entry-animation="scale-up-animation"
+		                  exit-animation="fade-out-animation" class="size-position" modal>
+		      <iron-icon icon="clear" title="more info" dialog-confirm autofocus style="float:right; margin:5px 0; cursor:pointer;">
+		        </iron-icon>
+		        <div class="container">
+		          <paper-card heading="Contact Us" elevation="2">
+			<prj-contact-form></prj-contact-form>
+			</paper-card>
+		        </div>
+		    </paper-dialog> -->
+		<paper-card heading="Contact Us" elevation="2">
+			<prj-contact-form></prj-contact-form>
+		</paper-card>
 	</template>
 	<script>
 		Polymer({
